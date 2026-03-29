@@ -4,7 +4,7 @@ Telegram trading bot for the [Magistery](https://magistery.org) prediction marke
 
 ## One-Click Deploy
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/sRGred)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/magistery-bot)
 
 ## Self-Host with Docker Compose
 
