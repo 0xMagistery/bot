@@ -1,0 +1,34 @@
+services:
+  bot:
+    image: ghcr.io/0xmagistery/bot:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://magistery:magistery@db:5432/magistery
+      RPC_URL: ${RPC_URL}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      OPERATOR_SEED: ${OPERATOR_SEED}
+      LAYERSWAP_API_KEY: ${LAYERSWAP_API_KEY:-}
+      OPERATOR_TELEGRAM_ID: ${OPERATOR_TELEGRAM_ID:-}
+    ports:
+      - "3000:3000"
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: magistery
+      POSTGRES_PASSWORD: magistery
+      POSTGRES_DB: magistery
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U magistery"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  pgdata:
