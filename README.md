@@ -4,13 +4,13 @@ Telegram trading bot for the [Magistery](https://magistery.org) prediction marke
 
 ## One-Click Deploy
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/magistery-bot)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/sRGred)
 
 ## Self-Host with Docker Compose
 
 ```bash
-git clone https://github.com/0xMagistery/magistery-bot.git
-cd magistery-bot
+git clone https://github.com/0xMagistery/bot.git
+cd bot
 cp .env.example .env
 # Edit .env with your values
 docker compose up -d
