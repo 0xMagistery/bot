@@ -1,1 +1,1 @@
-FROM ghcr.io/0xmagistery/bot:latest
+FROM ghcr.io/0xmagistery/bot-source:latest
